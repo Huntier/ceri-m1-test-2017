@@ -61,7 +61,7 @@
 				<groupId>com.gavinmogan</groupId>
 				<artifactId>codacy-maven-plugin</artifactId>
 				<version>1.0.3</version>
-</plugin>
+			</plugin>
 		</plugins>
 	</build>
 
