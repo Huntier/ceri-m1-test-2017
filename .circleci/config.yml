@@ -39,4 +39,8 @@ jobs:
         
       # run tests!
       - run: mvn integration-test
-
+      
+test:
+  override:
+    - mvn clean jacoco:prepare-agent test jacoco:report # Test unitaires et report Jacoco.
+    - mvn com.gavinmogan:codacy-maven-plugin:coverage -DcoverageReportFile=target/site/jacoco/jacoco.xml -DprojectToken=${CODECOV_TOKEN} -DapiToken=${CODECOV_TOKEN} # Envoyer report Jacoco
