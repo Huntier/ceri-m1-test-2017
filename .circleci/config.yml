@@ -3,6 +3,10 @@
 # Check https://circleci.com/docs/2.0/language-java/ for more details
 #
 version: 2
+language: java
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
 jobs:
   build:
     docker:
