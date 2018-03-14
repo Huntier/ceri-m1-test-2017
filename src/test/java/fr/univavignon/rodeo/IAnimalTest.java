@@ -7,8 +7,15 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.mockito.*;
+import org.mockito.junit.*;
+
+import fr.univavignon.rodeo.api.IAnimal;
 
 public class IAnimalTest {
+	
+	@Mock
+	protected IAnimal animal;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
