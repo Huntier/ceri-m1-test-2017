@@ -20,19 +20,13 @@ public class IAnimalTest {
 	private IAnimal animalFalse;
 
 
-	/* création de deux objets pour faire une table de vérité pour couvrir tout les cas possible*/
 	@Before
 	public void init() {
 		animal = mock(IAnimal.class);
 		when(animal.getXP()).thenReturn(42);
-		when(animal.isSecret()).thenReturn(true);
-		when(animal.isEndangered()).thenReturn(true);
-		when(animal.isBoss()).thenReturn(true);
-
-		animalFalse = mock(IAnimal.class);
-		when(animalFalse.isSecret()).thenReturn(false);
-		when(animalFalse.isEndangered()).thenReturn(false);
-		when(animalFalse.isBoss()).thenReturn(false);
+		when(animal.isSecret()).thenReturn(true,false);
+		when(animal.isEndangered()).thenReturn(true,false);
+		when(animal.isBoss()).thenReturn(true,false);
 	}
 
 	@BeforeClass
@@ -59,19 +53,19 @@ public class IAnimalTest {
 	@Test
 	public void testIsSecret() {
 		assertTrue(animal.isSecret());
-		assertFalse(animalFalse.isSecret());
+		assertFalse(animal.isSecret());
 	}
 
 	@Test
 	public void testIsEndangered() {
 		assertTrue(animal.isEndangered());
-		assertFalse(animalFalse.isEndangered());
+		assertFalse(animal.isEndangered());
 	}
 
 	@Test
 	public void testIsBoss() {
 		assertTrue(animal.isBoss());
-		assertFalse(animalFalse.isBoss());
+		assertFalse(animal.isBoss());
 	}
 
 }
