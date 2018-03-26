@@ -17,8 +17,26 @@ public class IAnimalTest {
 	
 	@Mock
 	private IAnimal animal;
-	private IAnimal animalFalse;
 
+	protected static IAnimal getAnimal1()
+	{
+		IAnimal animalMock = Mockito.mock(IAnimal.class);
+		Mockito.when(animalMock.getXP()).thenReturn(100);
+		Mockito.when(animalMock.isSecret()).thenReturn(true);
+		Mockito.when(animalMock.isEndangered()).thenReturn(false);
+		Mockito.when(animalMock.isBoss()).thenReturn(false);
+		return animalMock;
+	}
+
+	protected static IAnimal getAnimal2()
+	{
+		IAnimal animalMock = Mockito.mock(IAnimal.class);
+		Mockito.when(animalMock.getXP()).thenReturn(100);
+		Mockito.when(animalMock.isSecret()).thenReturn(true);
+		Mockito.when(animalMock.isEndangered()).thenReturn(false);
+		Mockito.when(animalMock.isBoss()).thenReturn(false);
+		return animalMock;
+	}
 
 	@Before
 	public void init() {
@@ -27,22 +45,6 @@ public class IAnimalTest {
 		when(animal.isSecret()).thenReturn(true,false);
 		when(animal.isEndangered()).thenReturn(true,false);
 		when(animal.isBoss()).thenReturn(true,false);
-	}
-
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
 	}
 
 	@Test
@@ -68,4 +70,19 @@ public class IAnimalTest {
 		assertFalse(animal.isBoss());
 	}
 
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
 }

@@ -1,9 +1,8 @@
 package fr.univavignon.rodeo;
 
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.*;
 
 import fr.univavignon.rodeo.api.IAnimal;
 import fr.univavignon.rodeo.api.IGameState;
@@ -21,7 +20,7 @@ public class IGameStateTest {
 	@Mock
 	private IGameState gameState;
 	private IAnimal animal;
-	private ISpecie specie;
+	private ISpecie specie,specie2;
 
 	private int progression[] = {1,10,15,20,30,40,50,60,70,80,90,100};
 
@@ -30,23 +29,69 @@ public class IGameStateTest {
 	@Before
 	public void init() {
 		gameState = mock(IGameState.class);
-
 		when(gameState.getProgression()).thenReturn(progression[0],
 				progression[1],progression[2],
 				progression[3],progression[4],
 				progression[5],progression[6],
 				progression[7],progression[8],progression[9],
 				progression[10],progression[11]);
-		animal = mock(IAnimal.class);
+
+		when(gameState.getSpecieLevel(null)).thenThrow(new IllegalArgumentException());
 		specie = mock(ISpecie.class);
-//		when(gameState.getSpecieLevel(specie)).thenReturn();
+		specie2 = mock(ISpecie.class);
+		doThrow(IllegalArgumentException.class).when(gameState).getSpecieLevel(specie);
 
 //		// si l'objet animal est null
-//		when(gameState.catchAnimal(null)).thenThrow(new IllegalArgumentException());
+		doThrow(IllegalArgumentException.class).when(gameState).catchAnimal(null);
+		animal = mock(IAnimal.class);
+		// si objet animal est pas nul mais que ?
+		doThrow(IllegalStateException.class).when(gameState).catchAnimal(animal);
+
 //		// If the given animal can not be found in current areas.
 //		when(gameState.catchAnimal()).thenThrow(new IllegalStateException());
 //		doNothing().when(gameState.catchAnimal(animal));
 
+	}
+
+	@Test
+	public void testExploreArea() {
+		fail("Not yet implemented");
+	}
+
+	@Test(expected=IllegalStateException.class)
+	public void testCatchAnimal() {
+
+		gameState.catchAnimal(animal);
+	}
+
+	@Test(expected=IllegalArgumentException.class)
+	public void testCatchAnimalNull()
+	{
+		gameState.catchAnimal(null);
+	}
+
+
+	@Test(expected=IllegalArgumentException.class)
+	public void testGetSpecieLevelNull()
+	{
+		gameState.getSpecieLevel(null);
+	}
+	@Test
+	public void testGetSpecieLevel() {
+		gameState.getSpecieLevel(specie2);
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testNullSpecie() {
+		gameState.getSpecieLevel(null);
+	}
+
+	/*The total game progression in percent.*/
+	@Test
+	public void testGetProgression() {
+		for (int aProgression : progression) {
+				assertEquals(gameState.getProgression(), aProgression);
+		}
 	}
 
 	@BeforeClass
@@ -65,33 +110,8 @@ public class IGameStateTest {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
-	public void testExploreArea() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testCatchAnimal() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetSpecieLevel() {
-
-	}
-
-	/*The total game progression in percent.*/
-	@Test
-	public void testGetProgression() {
-
-		for (int aProgression : progression) {
-			if (gameState.getProgression() != aProgression) {
-
-				fail(" pas de bonne progression");
-			}
-		}
 
 
-	}
+
 
 }
