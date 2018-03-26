@@ -23,18 +23,18 @@ public class ISpecieTest {
 
 	@Mock
 	private ISpecie specie;
-	private static  List<IAnimal> listAnimaux;
+	private List<IAnimal> listAnimaux = new ArrayList<>();
 
 	@Before
 	public void init() {
 		specie = mock(ISpecie.class);
 		when(specie.getArea()).thenReturn(42);
 
-//		IAnimal animal = mock(IAnimal.class);
-//		IAnimal animal2 = mock(IAnimal.class);
+		IAnimal animal = mock(IAnimal.class);
+		IAnimal animal2 = mock(IAnimal.class);
 
-		listAnimaux.add(IAnimalTest.getAnimal1());
-		listAnimaux.add(IAnimalTest.getAnimal2());
+		listAnimaux.add(animal);
+		listAnimaux.add(animal2);
 
 		when(specie.getAnimals()).thenReturn(listAnimaux);
 	}

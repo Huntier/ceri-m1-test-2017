@@ -53,10 +53,11 @@ public class IGameStateTest {
 
 	}
 
-	@Test
-	public void testExploreArea() {
-		fail("Not yet implemented");
-	}
+	// celle que tu m'as dit qui peux pas marcher
+//	@Test
+//	public void testExploreArea() {
+//		fail("Not yet implemented");
+//	}
 
 	@Test(expected=IllegalStateException.class)
 	public void testCatchAnimal() {

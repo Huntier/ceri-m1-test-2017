@@ -18,26 +18,6 @@ public class IAnimalTest {
 	@Mock
 	private IAnimal animal;
 
-	protected static IAnimal getAnimal1()
-	{
-		IAnimal animalMock = Mockito.mock(IAnimal.class);
-		Mockito.when(animalMock.getXP()).thenReturn(100);
-		Mockito.when(animalMock.isSecret()).thenReturn(true);
-		Mockito.when(animalMock.isEndangered()).thenReturn(false);
-		Mockito.when(animalMock.isBoss()).thenReturn(false);
-		return animalMock;
-	}
-
-	protected static IAnimal getAnimal2()
-	{
-		IAnimal animalMock = Mockito.mock(IAnimal.class);
-		Mockito.when(animalMock.getXP()).thenReturn(100);
-		Mockito.when(animalMock.isSecret()).thenReturn(true);
-		Mockito.when(animalMock.isEndangered()).thenReturn(false);
-		Mockito.when(animalMock.isBoss()).thenReturn(false);
-		return animalMock;
-	}
-
 	@Before
 	public void init() {
 		animal = mock(IAnimal.class);
