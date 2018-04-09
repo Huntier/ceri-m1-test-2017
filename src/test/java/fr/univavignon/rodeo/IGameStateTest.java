@@ -53,12 +53,6 @@ public class IGameStateTest {
 
 	}
 
-	// celle que tu m'as dit qui peux pas marcher
-//	@Test
-//	public void testExploreArea() {
-//		fail("Not yet implemented");
-//	}
-
 	@Test(expected=IllegalStateException.class)
 	public void testCatchAnimal() {
 
@@ -94,25 +88,5 @@ public class IGameStateTest {
 				assertEquals(gameState.getProgression(), aProgression);
 		}
 	}
-
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
-
-
-
 
 }
