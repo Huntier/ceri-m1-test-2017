@@ -8,7 +8,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.mockito.*;
-import org.mockito.junit.*;
 
 import fr.univavignon.rodeo.api.IAnimal;
 
