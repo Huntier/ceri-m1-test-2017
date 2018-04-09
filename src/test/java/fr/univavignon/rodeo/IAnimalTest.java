@@ -1,6 +1,7 @@
 package fr.univavignon.rodeo;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -14,7 +15,39 @@ import fr.univavignon.rodeo.api.IAnimal;
 public class IAnimalTest {
 	
 	@Mock
-	protected IAnimal animal;
+	private IAnimal animal;
+
+	@Before
+	public void init() {
+		animal = mock(IAnimal.class);
+		when(animal.getXP()).thenReturn(42);
+		when(animal.isSecret()).thenReturn(true,false);
+		when(animal.isEndangered()).thenReturn(true,false);
+		when(animal.isBoss()).thenReturn(true,false);
+	}
+
+	@Test
+	public void testGetXP() {
+		assertEquals(42, animal.getXP());
+	}
+
+	@Test
+	public void testIsSecret() {
+		assertTrue(animal.isSecret());
+		assertFalse(animal.isSecret());
+	}
+
+	@Test
+	public void testIsEndangered() {
+		assertTrue(animal.isEndangered());
+		assertFalse(animal.isEndangered());
+	}
+
+	@Test
+	public void testIsBoss() {
+		assertTrue(animal.isBoss());
+		assertFalse(animal.isBoss());
+	}
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -31,25 +64,4 @@ public class IAnimalTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
-	@Test
-	public void testGetXP() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testIsSecret() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testIsEndangered() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testIsBoss() {
-		fail("Not yet implemented");
-	}
-
 }
