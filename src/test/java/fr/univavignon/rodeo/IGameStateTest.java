@@ -71,10 +71,10 @@ public class IGameStateTest {
 	{
 		gameState.getSpecieLevel(null);
 	}
-	@Test
-	public void testGetSpecieLevel() {
-		gameState.getSpecieLevel(specie2);
-	}
+//	@Test
+//	public void testGetSpecieLevel() {
+//		gameState.getSpecieLevel(specie2);
+//	}
 
 	@Test(expected = IllegalArgumentException.class)
 	public void testNullSpecie() {
