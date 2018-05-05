@@ -4,27 +4,20 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import fr.univavignon.rodeo.api.IAnimal;
 import fr.univavignon.rodeo.api.IEnvironment;
-import fr.univavignon.rodeo.api.IGameState;
 import fr.univavignon.rodeo.api.ISpecie;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.mockito.Mock;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class IEnvironmentTest {
 
 	@Mock
 	private IEnvironment environment;
-	private List<ISpecie> listpecies= new ArrayList<>();
+	private List<ISpecie> listpecies = new ArrayList<>();
 
 	@Before
 	public void init() {
@@ -43,12 +36,12 @@ public class IEnvironmentTest {
 
 	@Test
 	public void testGetAreas() {
-		assertEquals(environment.getAreas(),3);
+		assertEquals(environment.getAreas(), 3);
 	}
 
 	@Test
 	public void testGetSpecies() {
-		assertEquals(environment.getSpecies(),listpecies);
+		assertEquals(environment.getSpecies(), listpecies);
 	}
 
 }

@@ -6,11 +6,7 @@ import static org.mockito.Mockito.when;
 
 import fr.univavignon.rodeo.api.IEnvironment;
 import fr.univavignon.rodeo.api.IEnvironmentProvider;
-import fr.univavignon.rodeo.api.IGameState;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.mockito.Mock;
 
@@ -19,14 +15,13 @@ import java.util.List;
 
 public class IEnvironmentProviderTest {
 
-
 	@Mock
-	private IEnvironmentProvider environmentProvider,environmentProviderNull;
+	private IEnvironmentProvider environmentProvider, environmentProviderNull;
 	private IEnvironment environment;
-	private static List<String> listEnvironnementProvider = Arrays.asList("sands","forest","ice");
+	private static List<String> listEnvironnementProvider = Arrays.asList("sands", "forest", "ice");
 
 	@Before
-	public void init(){
+	public void init() {
 		environmentProvider = mock(IEnvironmentProvider.class);
 		environmentProviderNull = mock(IEnvironmentProvider.class);
 		when(environmentProviderNull.getEnvironment(null)).thenThrow(new IllegalArgumentException());
@@ -39,17 +34,17 @@ public class IEnvironmentProviderTest {
 
 	@Test
 	public void testGetAvailableEnvironments() {
-		assertEquals(environmentProvider.getAvailableEnvironments(),listEnvironnementProvider);
+		assertEquals(environmentProvider.getAvailableEnvironments(), listEnvironnementProvider);
 	}
 
 	@Test
 	public void testGetEnvironment() {
-		assertEquals(environmentProvider.getEnvironment("sands"),environment);
+		assertEquals(environmentProvider.getEnvironment("sands"), environment);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
 	public void testGetEnvironmentNull() {
-		assertEquals(environmentProviderNull.getEnvironment(null),new IllegalArgumentException());
+		assertEquals(environmentProviderNull.getEnvironment(null), new IllegalArgumentException());
 	}
 
 }

@@ -3,17 +3,14 @@ package fr.univavignon.rodeo;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.mockito.*;
 
 import fr.univavignon.rodeo.api.IAnimal;
 
 public class IAnimalTest {
-	
+
 	@Mock
 	private IAnimal animal;
 
@@ -21,9 +18,9 @@ public class IAnimalTest {
 	public void init() {
 		animal = mock(IAnimal.class);
 		when(animal.getXP()).thenReturn(42);
-		when(animal.isSecret()).thenReturn(true,false);
-		when(animal.isEndangered()).thenReturn(true,false);
-		when(animal.isBoss()).thenReturn(true,false);
+		when(animal.isSecret()).thenReturn(true, false);
+		when(animal.isEndangered()).thenReturn(true, false);
+		when(animal.isBoss()).thenReturn(true, false);
 	}
 
 	@Test
