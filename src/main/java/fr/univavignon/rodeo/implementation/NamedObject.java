@@ -8,15 +8,14 @@ import fr.univavignon.rodeo.api.INamedObject;
  * @author rg
  */
 
+public class NamedObject implements INamedObject {
 
-public class NamedObject implements INamedObject{
-	
 	private String name;
-	
+
 	public NamedObject(String name) {
 		this.name = name;
 	}
-	
+
 	public String getName() {
 		return name;
 	}

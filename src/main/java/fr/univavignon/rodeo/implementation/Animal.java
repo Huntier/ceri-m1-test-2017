@@ -8,19 +8,18 @@ import fr.univavignon.rodeo.api.*;
  * @author rg
  */
 
-public class Animal extends NamedObject implements IAnimal{
+public class Animal extends NamedObject implements IAnimal {
 
-	private boolean boss, endangered ,secret;
+	private boolean boss, endangered, secret;
 	private int xp;
-	
-	public Animal(String name, int xp,boolean boss, boolean endangered, boolean secret) {
+
+	public Animal(String name, int xp, boolean boss, boolean endangered, boolean secret) {
 		super(name);
 		this.xp = xp;
 		this.boss = boss;
 		this.endangered = endangered;
 		this.secret = secret;
 	}
-	
 
 	public int getXP() {
 		return this.xp;

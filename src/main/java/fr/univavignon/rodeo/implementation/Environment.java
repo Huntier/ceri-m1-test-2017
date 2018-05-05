@@ -7,11 +7,12 @@ import fr.univavignon.rodeo.api.*;
 
 /**
  * Implementation of IEnvironment.
+ * 
  * @author rg
  *
  */
 
-public class Environment extends NamedObject implements IEnvironment{
+public class Environment extends NamedObject implements IEnvironment {
 
 	private int areas;
 	private List<ISpecie> species;
