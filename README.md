@@ -1,5 +1,12 @@
 # ceri-m2-test
 
+#badge
+[![CircleCI](https://circleci.com/gh/Huntier/ceri-m1-test-2017/tree/master.svg?style=shield&circle-token=f8cf53c79461803d1c994ddf6715fce7852947d6)](https://circleci.com/gh/Huntier/ceri-m1-test-2017/tree/master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/aba2f4dfd93d4f6cbf4fc145f9c9d7c9)](https://www.codacy.com/app/fbclol/ceri-m1-test-2017?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Huntier/ceri-m1-test-2017&amp;utm_campaign=Badge_Grade)
+
+
+codecov ( faut que tu le fasse toi j'ai pas la main sur le dépo)
+
 ## Resources
 
 ### TP
