@@ -1,5 +1,7 @@
 # ceri-m2-test
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/eae530f66f7043d282b8b92ea2bc8282)](https://app.codacy.com/app/fbclol/ceri-m1-test-2017?utm_source=github.com&utm_medium=referral&utm_content=Huntier/ceri-m1-test-2017&utm_campaign=badger)
+
 ## Resources
 
 ### TP
