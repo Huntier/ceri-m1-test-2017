@@ -4,25 +4,20 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import fr.univavignon.rodeo.api.IEnvironmentProvider;
 import fr.univavignon.rodeo.api.IGameState;
 import fr.univavignon.rodeo.api.IGameStateProvider;
-import fr.univavignon.rodeo.api.ISpecie;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.mockito.Mock;
 
 public class IGameStateProviderTest {
 
 	@Mock
-	private IGameStateProvider gameStateProvider,gameStateProviderNull;
+	private IGameStateProvider gameStateProvider, gameStateProviderNull;
 	private IGameState gameState;
 
 	@Before
-	public void init(){
+	public void init() {
 		gameStateProvider = mock(IGameStateProvider.class);
 		gameState = mock(IGameState.class);
 		when(gameStateProvider.get("name")).thenReturn(gameState);
@@ -32,10 +27,10 @@ public class IGameStateProviderTest {
 	}
 
 	// je ne sais pas comment la tester
-//	@Test
-//	public void testSave() {
-//		fail("Not yet implemented");
-//	}
+	// @Test
+	// public void testSave() {
+	// fail("Not yet implemented");
+	// }
 
 	@Test
 	public void testGet() {
@@ -46,24 +41,5 @@ public class IGameStateProviderTest {
 	public void getTestNull() {
 		gameStateProviderNull.get(null);
 	}
-
-
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
-
 
 }
