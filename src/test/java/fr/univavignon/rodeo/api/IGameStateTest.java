@@ -1,4 +1,4 @@
-package fr.univavignon.rodeo;
+package fr.univavignon.rodeo.api;
 
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
@@ -16,7 +16,7 @@ public class IGameStateTest {
 	@Mock
 	private IGameState gameState;
 	private IAnimal animal;
-	private ISpecie specie, specie2;
+	public ISpecie specie, specie2;
 
 	private int progression[] = { 1, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
 
@@ -67,11 +67,6 @@ public class IGameStateTest {
 	// public void testGetSpecieLevel() {
 	// gameState.getSpecieLevel(specie2);
 	// }
-
-	@Test(expected = IllegalArgumentException.class)
-	public void testNullSpecie() {
-		gameState.getSpecieLevel(null);
-	}
 
 	/* The total game progression in percent. */
 	@Test

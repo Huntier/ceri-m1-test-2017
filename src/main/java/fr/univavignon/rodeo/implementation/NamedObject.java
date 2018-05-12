@@ -1,6 +1,10 @@
 package fr.univavignon.rodeo.implementation;
 
+import fr.univavignon.rodeo.api.IAnimal;
 import fr.univavignon.rodeo.api.INamedObject;
+
+import java.util.List;
+import java.util.Objects;
 
 /**
  * Implementation of INamedObject.
@@ -10,14 +14,13 @@ import fr.univavignon.rodeo.api.INamedObject;
 
 public class NamedObject implements INamedObject {
 
-	private String name;
+	protected String name;
 
-	public NamedObject(String name) {
+	NamedObject(String name) {
 		this.name = name;
 	}
 
 	public String getName() {
 		return name;
 	}
-
 }

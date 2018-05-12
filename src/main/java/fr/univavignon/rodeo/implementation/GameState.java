@@ -14,7 +14,7 @@ public class GameState extends NamedObject implements IGameState {
 	private SpecieLevel level;
 	private int progression;
 
-	public GameState(String name) {
+	GameState(String name) {
 		super(name);
 		this.level = null;
 		this.progression = 1;
@@ -34,10 +34,11 @@ public class GameState extends NamedObject implements IGameState {
 	}
 
 	public SpecieLevel getSpecieLevel(ISpecie specie) throws IllegalArgumentException {
-		if (specie != null) {
-			return this.level;
-		}
-		throw new IllegalArgumentException();
+        if (specie == null) {
+            throw new IllegalArgumentException();
+        } else {
+            return this.level;
+        }
 
 	}
 
@@ -45,4 +46,10 @@ public class GameState extends NamedObject implements IGameState {
 		return this.progression;
 	}
 
+
+	@Override
+	public boolean equals(Object o) {
+		GameState object = (GameState) o;
+		return (progression == object.getProgression());
+	}
 }

@@ -1,4 +1,4 @@
-package fr.univavignon.rodeo;
+package fr.univavignon.rodeo.api;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
@@ -23,8 +23,9 @@ public class IAnimalTest {
 		when(animal.isBoss()).thenReturn(true, false);
 	}
 
+
 	@Test
-	public void testGetXP() {
+	public void testGetXp() {
 		assertEquals(42, animal.getXP());
 	}
 

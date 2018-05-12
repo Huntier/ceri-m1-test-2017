@@ -15,25 +15,24 @@ public class GameStateProvider implements IGameStateProvider {
 
 	private LinkedList<IGameState> states;
 
-	public GameStateProvider() {
-		this.states = new LinkedList<IGameState>();
+	GameStateProvider() {
+		this.states = new LinkedList<>();
 	}
 
 	public IGameState get(String name) throws IllegalArgumentException {
-		if (name != null) {
-			for (IGameState iGameState : this.states) {
+		if (name == null) {
+			throw new IllegalArgumentException();
+		} else {
+			LinkedList<IGameState> states1 = this.states;
+			for (int i = 0, states1Size = states1.size(); i < states1Size; i++) {
+				IGameState iGameState = states1.get(i);
 				if (iGameState.getName().equals(name))
 					return iGameState;
 			}
-
 			IGameState state = new GameState("state");
 			this.states.add(state);
 			return state;
-
-		} else {
-			throw new IllegalArgumentException();
 		}
-
 	}
 
 	@Override
