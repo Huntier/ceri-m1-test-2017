@@ -44,9 +44,6 @@ jobs:
           key: v1-dependencies-{{ checksum "pom.xml" }}
         
       # run tests!
-      - run: mvn integration-test
-      
-test:
-  override:
-    - mvn clean jacoco:prepare-agent test jacoco:report # Test unitaires et report Jacoco.
-    - mvn com.gavinmogan:codacy-maven-plugin:coverage -DcoverageReportFile=target/site/jacoco/jacoco.xml -DprojectToken=${CODECOV_TOKEN} -DapiToken=${CODECOV_TOKEN} # Envoyer report Jacoco
+            - run: mvn integration-test
+            - run: mvn cobertura:cobertura
+            - run: bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
