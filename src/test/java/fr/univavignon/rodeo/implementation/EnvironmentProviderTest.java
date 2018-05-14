@@ -88,10 +88,10 @@ public class EnvironmentProviderTest extends IEnvironmentProviderTest {
         assertNotEquals(env, environmentProvider.getEnvironments());
     }
 
-    @Test (expected=IllegalArgumentException.class)
-    public void testGetEnvironmentIsNull() {
-        environmentProvider.getEnvironment(null);
-    }
+//    @Test (expected=IllegalArgumentException.class)
+//    public void testGetEnvironmentIsNull() {
+//        environmentProvider.getEnvironment(null);
+//    }
 
     @Test
     public void testGetEnvironment() {
