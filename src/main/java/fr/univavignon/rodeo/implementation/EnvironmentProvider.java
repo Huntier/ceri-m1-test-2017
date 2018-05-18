@@ -49,15 +49,15 @@ public class EnvironmentProvider implements IEnvironmentProvider {
                     )),
                     new Specie("Giraffes", 3, Arrays.asList(
                             new Animal("Giraffe", 0, false, false, false),				//normal
-                            new Animal("UFG", 30, false, false, true)					//boss
+                            new Animal("Giraffemas Tree", 30, false, false, true)					//boss
                     )),
                     new Specie("Vultures", 4, Arrays.asList(
-                            new Animal("Egyptian Vulture", 1, false, false, false), 	//normal
+                            new Animal("Viva Las Vulture", 1, false, false, false), 	//normal
                             new Animal("Vulture-on", 5, true, false, false), 			//secret
                             new Animal("Volture", 30, false, true, false) 				//endangered
                     )),
                     new Specie("Lions", 5, Arrays.asList(
-                            new Animal("Dande Lion", 1, false, false, false), 			//normal
+                            new Animal("Sabretooth Lion", 1, false, false, false), 			//normal
                             new Animal("Le'Ion Chef", 5, true, false, false), 			//secret
                             new Animal("Nian Monster ", 30, false, true, false) 		//endangered
                     ))
