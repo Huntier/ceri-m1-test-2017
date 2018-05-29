@@ -4,7 +4,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/aba2f4dfd93d4f6cbf4fc145f9c9d7c9)](https://www.codacy.com/app/fbclol/ceri-m1-test-2017?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Huntier/ceri-m1-test-2017&amp;utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/Huntier/ceri-m1-test-2017/branch/master/graph/badge.svg)](https://codecov.io/gh/Huntier/ceri-m1-test-2017)
 
-
+Projet réalisé par Boué Franck et Galy Renaud.
 
 ## Resources
 
